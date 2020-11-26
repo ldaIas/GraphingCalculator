@@ -17,34 +17,24 @@
 					<DistClean command="C:/PROGRA~1/mingw64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="GraphingCalculator">
-				<Option output="C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/GraphingCalculator.exe" prefix_auto="0" extension_auto="0"/>
+			<Target title="rebuild_cache">
 				<Option working_dir="C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="C:/Program Files/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
-					<Add directory="C:/Program Files/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
-					<Add directory="C:/Program Files/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
-					<Add directory="C:/Program Files/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
-				</Compiler>
+				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/mingw64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 GraphingCalculator"/>
+					<Build command="C:/PROGRA~1/mingw64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
 					<CompileFile command="C:/PROGRA~1/mingw64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="C:/PROGRA~1/mingw64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="C:/PROGRA~1/mingw64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="GraphingCalculator/fast">
-				<Option output="C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/GraphingCalculator.exe" prefix_auto="0" extension_auto="0"/>
+			<Target title="MazeSolver">
+				<Option output="C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/MazeSolver.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="C:/Users/Admin/CLionProjects/GraphingCalculator/include"/>
 					<Add directory="C:/Program Files/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
 					<Add directory="C:/Program Files/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
 					<Add directory="C:/Program Files/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
@@ -53,7 +43,29 @@
 					<Add directory="C:/Program Files/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/mingw64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 GraphingCalculator/fast"/>
+					<Build command="C:/PROGRA~1/mingw64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 MazeSolver"/>
+					<CompileFile command="C:/PROGRA~1/mingw64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/mingw64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/mingw64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="MazeSolver/fast">
+				<Option output="C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/MazeSolver.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Admin/CLionProjects/GraphingCalculator/include"/>
+					<Add directory="C:/Program Files/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/mingw64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 MazeSolver/fast"/>
 					<CompileFile command="C:/PROGRA~1/mingw64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="C:/PROGRA~1/mingw64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="C:/PROGRA~1/mingw64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -69,19 +81,15 @@
 					<DistClean command="C:/PROGRA~1/mingw64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="C:/PROGRA~1/mingw64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/mingw64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/mingw64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/mingw64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 		</Build>
+		<Unit filename="C:/Users/Admin/CLionProjects/GraphingCalculator/WinD.cpp">
+			<Option target="MazeSolver"/>
+		</Unit>
+		<Unit filename="C:/Users/Admin/CLionProjects/GraphingCalculator/WinD.h">
+			<Option target="MazeSolver"/>
+		</Unit>
 		<Unit filename="C:/Users/Admin/CLionProjects/GraphingCalculator/main.cpp">
-			<Option target="GraphingCalculator"/>
+			<Option target="MazeSolver"/>
 		</Unit>
 		<Unit filename="C:/Users/Admin/CLionProjects/GraphingCalculator/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

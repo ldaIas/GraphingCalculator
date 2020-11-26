@@ -55,17 +55,6 @@ CMAKE_BINARY_DIR = C:\Users\Admin\CLionProjects\GraphingCalculator\cmake-build-d
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2020.1.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -76,6 +65,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	"C:\Program Files\JetBrains\CLion 2020.1.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -110,17 +110,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named GraphingCalculator
+# Target rules for targets named MazeSolver
 
 # Build rule for target.
-GraphingCalculator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 GraphingCalculator
-.PHONY : GraphingCalculator
+MazeSolver: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 MazeSolver
+.PHONY : MazeSolver
 
 # fast build rule for target.
-GraphingCalculator/fast:
-	$(MAKE) -f CMakeFiles\GraphingCalculator.dir\build.make CMakeFiles/GraphingCalculator.dir/build
-.PHONY : GraphingCalculator/fast
+MazeSolver/fast:
+	$(MAKE) -f CMakeFiles\MazeSolver.dir\build.make CMakeFiles/MazeSolver.dir/build
+.PHONY : MazeSolver/fast
+
+WinD.obj: WinD.cpp.obj
+
+.PHONY : WinD.obj
+
+# target to build an object file
+WinD.cpp.obj:
+	$(MAKE) -f CMakeFiles\MazeSolver.dir\build.make CMakeFiles/MazeSolver.dir/WinD.cpp.obj
+.PHONY : WinD.cpp.obj
+
+WinD.i: WinD.cpp.i
+
+.PHONY : WinD.i
+
+# target to preprocess a source file
+WinD.cpp.i:
+	$(MAKE) -f CMakeFiles\MazeSolver.dir\build.make CMakeFiles/MazeSolver.dir/WinD.cpp.i
+.PHONY : WinD.cpp.i
+
+WinD.s: WinD.cpp.s
+
+.PHONY : WinD.s
+
+# target to generate assembly for a file
+WinD.cpp.s:
+	$(MAKE) -f CMakeFiles\MazeSolver.dir\build.make CMakeFiles/MazeSolver.dir/WinD.cpp.s
+.PHONY : WinD.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -128,7 +155,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) -f CMakeFiles\GraphingCalculator.dir\build.make CMakeFiles/GraphingCalculator.dir/main.cpp.obj
+	$(MAKE) -f CMakeFiles\MazeSolver.dir\build.make CMakeFiles/MazeSolver.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -137,7 +164,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles\GraphingCalculator.dir\build.make CMakeFiles/GraphingCalculator.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles\MazeSolver.dir\build.make CMakeFiles/MazeSolver.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -146,7 +173,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles\GraphingCalculator.dir\build.make CMakeFiles/GraphingCalculator.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles\MazeSolver.dir\build.make CMakeFiles/MazeSolver.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -155,9 +182,12 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... GraphingCalculator
-	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... MazeSolver
+	@echo ... edit_cache
+	@echo ... WinD.obj
+	@echo ... WinD.i
+	@echo ... WinD.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

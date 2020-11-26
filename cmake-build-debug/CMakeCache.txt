@@ -253,6 +253,12 @@ GraphingCalculator_BINARY_DIR:STATIC=C:/Users/Admin/CLionProjects/GraphingCalcul
 //Value Computed by CMake
 GraphingCalculator_SOURCE_DIR:STATIC=C:/Users/Admin/CLionProjects/GraphingCalculator
 
+//Value Computed by CMake
+ImgProcProj_BINARY_DIR:STATIC=C:/Users/Admin/CLionProjects/GraphingCalculator/cmake-build-debug
+
+//Value Computed by CMake
+ImgProcProj_SOURCE_DIR:STATIC=C:/Users/Admin/CLionProjects/GraphingCalculator
+
 
 ########################
 # INTERNAL cache entries

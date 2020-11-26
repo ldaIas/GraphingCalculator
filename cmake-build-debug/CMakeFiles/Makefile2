@@ -52,7 +52,7 @@ CMAKE_BINARY_DIR = C:\Users\Admin\CLionProjects\GraphingCalculator\cmake-build-d
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/GraphingCalculator.dir/all
+all: CMakeFiles/MazeSolver.dir/all
 
 .PHONY : all
 
@@ -62,36 +62,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/GraphingCalculator.dir/clean
+clean: CMakeFiles/MazeSolver.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/GraphingCalculator.dir
+# Target rules for target CMakeFiles/MazeSolver.dir
 
 # All Build rule for target.
-CMakeFiles/GraphingCalculator.dir/all:
-	$(MAKE) -f CMakeFiles\GraphingCalculator.dir\build.make CMakeFiles/GraphingCalculator.dir/depend
-	$(MAKE) -f CMakeFiles\GraphingCalculator.dir\build.make CMakeFiles/GraphingCalculator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Admin\CLionProjects\GraphingCalculator\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target GraphingCalculator"
-.PHONY : CMakeFiles/GraphingCalculator.dir/all
+CMakeFiles/MazeSolver.dir/all:
+	$(MAKE) -f CMakeFiles\MazeSolver.dir\build.make CMakeFiles/MazeSolver.dir/depend
+	$(MAKE) -f CMakeFiles\MazeSolver.dir\build.make CMakeFiles/MazeSolver.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Admin\CLionProjects\GraphingCalculator\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target MazeSolver"
+.PHONY : CMakeFiles/MazeSolver.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/GraphingCalculator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Admin\CLionProjects\GraphingCalculator\cmake-build-debug\CMakeFiles 2
-	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/GraphingCalculator.dir/all
+CMakeFiles/MazeSolver.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Admin\CLionProjects\GraphingCalculator\cmake-build-debug\CMakeFiles 3
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/MazeSolver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Admin\CLionProjects\GraphingCalculator\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/GraphingCalculator.dir/rule
+.PHONY : CMakeFiles/MazeSolver.dir/rule
 
 # Convenience name for target.
-GraphingCalculator: CMakeFiles/GraphingCalculator.dir/rule
+MazeSolver: CMakeFiles/MazeSolver.dir/rule
 
-.PHONY : GraphingCalculator
+.PHONY : MazeSolver
 
 # clean rule for target.
-CMakeFiles/GraphingCalculator.dir/clean:
-	$(MAKE) -f CMakeFiles\GraphingCalculator.dir\build.make CMakeFiles/GraphingCalculator.dir/clean
-.PHONY : CMakeFiles/GraphingCalculator.dir/clean
+CMakeFiles/MazeSolver.dir/clean:
+	$(MAKE) -f CMakeFiles\MazeSolver.dir\build.make CMakeFiles/MazeSolver.dir/clean
+.PHONY : CMakeFiles/MazeSolver.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
