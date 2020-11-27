@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Admin/CLionProjects/GraphingCalculator/GraphingClasses.cpp">
+			<Option target="MazeSolver"/>
+		</Unit>
+		<Unit filename="C:/Users/Admin/CLionProjects/GraphingCalculator/GraphingClasses.h">
+			<Option target="MazeSolver"/>
+		</Unit>
 		<Unit filename="C:/Users/Admin/CLionProjects/GraphingCalculator/WinD.cpp">
 			<Option target="MazeSolver"/>
 		</Unit>

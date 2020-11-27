@@ -9,6 +9,8 @@
 class WinD {
 public:
 
+    WinD();
+
     //Initialize SDL
     int initialize();
 
@@ -20,6 +22,12 @@ public:
 
     //Draw the background of the window
     void drawBackground();
+
+    //Display a segment in the window
+    void displaySegment(int posX, int posY, int width, int height, int colors[]);
+
+    int getHeight() {return height;}
+    int getWidth() {return width;}
 
 private:
 

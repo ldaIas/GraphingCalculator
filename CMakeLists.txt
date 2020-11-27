@@ -9,6 +9,6 @@ link_directories(${PROJECT_SOURCE_DIR}/lib)
 
 set(SOURCE_FILES main.cpp)
 
-add_executable(MazeSolver main.cpp WinD.cpp WinD.h main.cpp)
+add_executable(MazeSolver main.cpp WinD.cpp WinD.h main.cpp GraphingClasses.cpp GraphingClasses.h)
 
 target_link_libraries(MazeSolver SDL2main SDL2)

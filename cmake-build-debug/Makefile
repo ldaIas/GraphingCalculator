@@ -122,6 +122,33 @@ MazeSolver/fast:
 	$(MAKE) -f CMakeFiles\MazeSolver.dir\build.make CMakeFiles/MazeSolver.dir/build
 .PHONY : MazeSolver/fast
 
+GraphingClasses.obj: GraphingClasses.cpp.obj
+
+.PHONY : GraphingClasses.obj
+
+# target to build an object file
+GraphingClasses.cpp.obj:
+	$(MAKE) -f CMakeFiles\MazeSolver.dir\build.make CMakeFiles/MazeSolver.dir/GraphingClasses.cpp.obj
+.PHONY : GraphingClasses.cpp.obj
+
+GraphingClasses.i: GraphingClasses.cpp.i
+
+.PHONY : GraphingClasses.i
+
+# target to preprocess a source file
+GraphingClasses.cpp.i:
+	$(MAKE) -f CMakeFiles\MazeSolver.dir\build.make CMakeFiles/MazeSolver.dir/GraphingClasses.cpp.i
+.PHONY : GraphingClasses.cpp.i
+
+GraphingClasses.s: GraphingClasses.cpp.s
+
+.PHONY : GraphingClasses.s
+
+# target to generate assembly for a file
+GraphingClasses.cpp.s:
+	$(MAKE) -f CMakeFiles\MazeSolver.dir\build.make CMakeFiles/MazeSolver.dir/GraphingClasses.cpp.s
+.PHONY : GraphingClasses.cpp.s
+
 WinD.obj: WinD.cpp.obj
 
 .PHONY : WinD.obj
@@ -185,6 +212,9 @@ help:
 	@echo ... rebuild_cache
 	@echo ... MazeSolver
 	@echo ... edit_cache
+	@echo ... GraphingClasses.obj
+	@echo ... GraphingClasses.i
+	@echo ... GraphingClasses.s
 	@echo ... WinD.obj
 	@echo ... WinD.i
 	@echo ... WinD.s

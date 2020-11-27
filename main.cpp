@@ -3,14 +3,16 @@
 //
 
 #include "WinD.h"
+#include "GraphingClasses.h"
 
 int main( int argc, char* args[]){
 
     //Create the window display
-    WinD windowDisplay;
+    WinD* windowDisplay = new WinD();
 
-    int init = windowDisplay.initialize();
+    int init = windowDisplay->initialize();
     if(init != 0) return init;
 
-        
+    Graphing graph(windowDisplay);
+
 }
