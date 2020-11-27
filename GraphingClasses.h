@@ -15,22 +15,32 @@ public:
 
     Graphing(WinD* display);
 
+    //Render the graph on the window
+    int renderGraph();
+
     //Get the function to graph from user input
     void getFunction();
 
 private:
 
-    //Render the graph on the window
-    void renderGraph();
+
 
     string function;
 
     WinD* winDisplay;
+
+    //Variables controlling graph placement and color in window
     int posX;
     int posY;
     int width;
     int height;
     int bkgColor [3] = {255, 255, 255};
+
+    //Variables controlling axis settings
+    int axisThickness;
+    int axisColor [3] = {0, 0, 0};
+
+
 
 };
 

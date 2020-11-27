@@ -27,14 +27,38 @@ Graphing::Graphing(WinD* display) {
         height = winDisplay->getHeight() * .75;
     }
 
-    renderGraph();
+    axisThickness = 2;
+
 }
 
 //Render the graph for display to the window
-void Graphing::renderGraph() {
+int Graphing::renderGraph() {
 
-    winDisplay->displaySegment(posX, posY, width, height, bkgColor);
+    //Display the background for the graph
+    cout << "bkg" << endl;
+    int bkgCode = winDisplay->displaySegment(posX, posY, width, height, bkgColor);
+    if(bkgCode != 0){
+        cout << "Error rendering background of graph" << endl;
+        return bkgCode;
+    }
 
+    //Draw the vertical axis
+    cout << "vert" << endl;
+    int vertCode = winDisplay->displaySegment(((width / 2) + posX), posY, axisThickness, height, axisColor);
+    if(vertCode != 0){
+        cout << "Error rendering vertical axis of graph" << endl;
+        return vertCode;
+    }
+
+    //Draw horizontal axis
+    cout << "hor" << endl;
+    int horizCode = winDisplay->displaySegment(posX, ((height / 2) + posY), width, axisThickness, axisColor);
+    if(horizCode != 0){
+        cout << "Error rendering horizontal axis of graph" << endl;
+        return horizCode;
+    }
+
+    return 0;
 }
 
 

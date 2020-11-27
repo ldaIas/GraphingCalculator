@@ -52,7 +52,7 @@ int WinD::display() {
     //Draw the background of the window
     drawBackground();
 
-
+    return 0;
 }
 
 //Draw the background of the opened window gray
@@ -77,24 +77,40 @@ void WinD::drawBackground() {
  * @param width Width of the segment
  * @param height Height of the segment
  * @param colors Array of colors (r, g, b)
+ *
+ * @return code The exit code of the function
  */
 
-void WinD::displaySegment(int posX, int posY, int width, int height, int color[]) {
+int WinD::displaySegment(int posX, int posY, int width, int height, int color[]) {
 
-    SDL_SetRenderDrawColor(ren, color[0], color[1], color[2], 255);
+    /*int clearCode = SDL_RenderClear(ren);
+    if(clearCode != 0){
+        return -20;
+    }*/
 
-    SDL_Rect* graph = new SDL_Rect();
-    graph->x = posX;
-    graph->y = posY;
-    graph->w = width;
-    graph->h = height;
+    int renderCode = SDL_SetRenderDrawColor(ren, color[0], color[1], color[2], 255);
+    if(renderCode != 0) {
+        return -21;
+    }
 
-    SDL_RenderFillRect(ren, graph);
+    SDL_Rect* rect = new SDL_Rect();
+    rect->x = posX;
+    rect->y = posY;
+    rect->w = width;
+    rect->h = height;
+
+    int fillCode = SDL_RenderFillRect(ren, rect);
+    if(fillCode != 0){
+        return -22;
+    }
+
     SDL_RenderPresent(ren);
 
     //TODO Delete later
-    SDL_Delay(5000);
-    windowClose();
+    SDL_Delay(1000);
+    //windowClose();
+
+    return 0;
 }
 
 

@@ -14,5 +14,10 @@ int main( int argc, char* args[]){
     if(init != 0) return init;
 
     Graphing graph(windowDisplay);
+    int graphCode = graph.renderGraph();
+    if(graphCode != 0){
+        return graphCode;
+    }
 
+    return 0;
 }
