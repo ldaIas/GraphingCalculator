@@ -26,6 +26,9 @@ public:
     //Display a segment in the window
     int displaySegment(int posX, int posY, int width, int height, int colors[]);
 
+    //Draw a line between two points
+    void drawLine(int x1, int y1, int x2, int y2, int colors[]);
+
     int getHeight() {return height;}
     int getWidth() {return width;}
 

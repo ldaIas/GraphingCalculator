@@ -107,12 +107,20 @@ int WinD::displaySegment(int posX, int posY, int width, int height, int color[])
     SDL_RenderPresent(ren);
 
     //TODO Delete later
-    SDL_Delay(1000);
+    //SDL_Delay(50);
     //windowClose();
 
     return 0;
 }
 
+//Draw a line between two points
+void WinD::drawLine(int x1, int y1, int x2, int y2, int colors[]){
+
+    SDL_SetRenderDrawColor(ren, colors[0], colors[1], colors[2], 255);
+    SDL_RenderDrawLine(ren, x1, y1, x2, y2);
+    SDL_RenderPresent(ren);
+    return;
+}
 
 
 //Close the window

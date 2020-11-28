@@ -19,5 +19,7 @@ int main( int argc, char* args[]){
         return graphCode;
     }
 
+    graph.getFunction();
+
     return 0;
 }

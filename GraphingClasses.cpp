@@ -5,6 +5,8 @@
 #include "GraphingClasses.h"
 #include "WinD.h"
 #include <iostream>
+#include <cmath>
+#include <vector>
 using namespace std;
 
 /** Constructor for the graph
@@ -28,6 +30,8 @@ Graphing::Graphing(WinD* display) {
     }
 
     axisThickness = 2;
+    vertRes = 20;
+    horRes = 20;
 
 }
 
@@ -35,7 +39,6 @@ Graphing::Graphing(WinD* display) {
 int Graphing::renderGraph() {
 
     //Display the background for the graph
-    cout << "bkg" << endl;
     int bkgCode = winDisplay->displaySegment(posX, posY, width, height, bkgColor);
     if(bkgCode != 0){
         cout << "Error rendering background of graph" << endl;
@@ -43,28 +46,185 @@ int Graphing::renderGraph() {
     }
 
     //Draw the vertical axis
-    cout << "vert" << endl;
     int vertCode = winDisplay->displaySegment(((width / 2) + posX), posY, axisThickness, height, axisColor);
     if(vertCode != 0){
         cout << "Error rendering vertical axis of graph" << endl;
         return vertCode;
     }
 
+    //Draw the segments on the vertical axis
+    int segmentY = posY;
+    for(int i = 0; i <= vertRes; i++){
+
+        //If show grid enabled, a gray grid will appear
+        if(showGrid) {
+            int vertSegCode = winDisplay->displaySegment(posX, segmentY,
+                                                         width, axisThickness, gridColor);
+            if(vertSegCode != 0){
+                cout << "Error rendering vertical axis segments of graph" << endl;
+                return vertSegCode;
+            }
+        }
+
+        //Draw the segments on the vertical axis
+        int vertSegCode = winDisplay->displaySegment(((width / 2) + posX - 5), segmentY,
+                                                     10, axisThickness, axisColor);
+        if(vertSegCode != 0){
+            cout << "Error rendering vertical axis segments of graph" << endl;
+            return vertSegCode;
+        }
+        segmentY += height / vertRes;
+    }
+
+
     //Draw horizontal axis
-    cout << "hor" << endl;
     int horizCode = winDisplay->displaySegment(posX, ((height / 2) + posY), width, axisThickness, axisColor);
     if(horizCode != 0){
         cout << "Error rendering horizontal axis of graph" << endl;
         return horizCode;
     }
 
+    //Draw the segments on the horizontal axis
+    int segmentX = posX;
+    for(int i = 0; i <= horRes; i++) {
+
+        //If show grid enabled, a gray grid will appear
+        if (showGrid) {
+
+            //Don't draw over the vertical axis
+            if( segmentX == ((width / 2) + posX)){
+                segmentX += width / horRes;
+                continue;
+            }
+            int horizSegCode = winDisplay->displaySegment(segmentX, posY,
+                                                          axisThickness, height, gridColor);
+            if (horizSegCode != 0) {
+                cout << "Error rendering vertical axis segments of graph" << endl;
+                return horizSegCode;
+            }
+        }
+
+        // Draw the segments on the horizontal axis
+        int horizSegCode = winDisplay->displaySegment(segmentX, ((width / 2) + posY - 5),
+                                                      axisThickness, 10, axisColor);
+        if (horizSegCode != 0) {
+            cout << "Error rendering vertical axis segments of graph" << endl;
+            return horizSegCode;
+        }
+        segmentX += width / horRes;
+    }
     return 0;
 }
 
 
 //Get a function to graph from user input
 void Graphing::getFunction() {
-    cout << "Enter a function to graph" << endl;
-    getline(cin, function);
+    //cout << "Enter a function to graph" << endl;
+    //getline(cin, function);
+
+    functCompute();
 }
 
+//Parse and compute the input function
+void Graphing::functCompute(){
+
+    //First, remove whitespace from input
+    /*for(int i = 0; i < function.length(); i++){
+        if(function[i] == ' ') {
+            function.erase(i, 1);
+            i -= 1;
+        }
+    }
+    cout << function << endl;*/
+
+    graphPoint();
+
+    SDL_Delay(5000);
+}
+
+float Graphing::functParse(float x) {
+
+    /* TODO
+     * Scrap this. It needs to comform to pemdas
+     * something like find *, then /, then -, so on
+     */
+    vector<string> operationQueue;
+    int lastOpIndex = 2;
+    string funct = function;
+    for(int i = 0; i < function.length(); i++){
+
+        char first = function[i];
+        if(checkForOperation(function[i])) {
+
+            // Iterate to next operator to get operation substring
+            for(int j = i + 1; j < function.length(); j++){
+                char sec = function[j];
+                if(checkForOperation(function[j])) {
+                    operationQueue.push_back(function.substr(lastOpIndex, j - 2));
+                    i = j - 2;
+                    lastOpIndex += j - 2;
+                    break;
+                }
+            }
+        }
+    }
+
+    for(auto & i : operationQueue){
+        cout << i << endl;
+    }
+
+    return 0;
+
+}
+
+//Check if the current char is an operation
+bool Graphing::checkForOperation(char c){
+
+    switch(c) {
+        case '+':
+        case '-':
+        case '/':
+        case '*':
+        case '^':
+        case '|':
+            return true;
+
+        default:
+            return false;
+    }
+
+}
+
+
+void Graphing::graphPoint() {
+
+    int xPoint = posX;
+    int lastPointX = xPoint;
+    int lastPointY;
+
+    for(int xIt = ((horRes / 2) - horRes) * 100 ; xIt < (horRes / 2) * 100; xIt += functRes * 100) {
+
+        float x = xIt / 100;
+        float y = -1 * x;
+
+        int yPoint = (posY + (height / 2)) + ( (height / vertRes) * (y * -1) ) - (5 - axisThickness);
+
+        if(xIt == ((horRes / 2) - horRes) * 100){
+            lastPointY = yPoint;
+        }
+
+        //cout << "X: " << x << endl;
+        //cout << "Y: " << y << endl;
+
+        winDisplay->displaySegment(xPoint, yPoint, 5, 5, functColor);
+        winDisplay->drawLine(lastPointX, lastPointY, xPoint, yPoint, functColor);
+
+        lastPointX = xPoint;
+        lastPointY = yPoint;
+
+        xPoint += (width / horRes) * functRes;
+
+
+    }
+    cin >> xPoint;
+}
