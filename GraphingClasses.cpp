@@ -196,16 +196,17 @@ bool Graphing::checkForOperation(char c){
 }
 
 
-void Graphing::graphPoint() {
+int Graphing::graphPoint() {
 
     int xPoint = posX;
     int lastPointX = xPoint;
     int lastPointY;
+    cout << (horRes / 2) * 100 << endl;
+    for(int xIt = ((horRes / 2) - horRes) * 100 ; xIt <= (horRes / 2) * 100; xIt += functRes * 100) {
 
-    for(int xIt = ((horRes / 2) - horRes) * 100 ; xIt < (horRes / 2) * 100; xIt += functRes * 100) {
-
-        float x = xIt / 100;
-        float y = -1 * x;
+        cout << "xIt: " << xIt << endl;
+        double x = xIt / 100.0;
+        double y = pow(x, 2);
 
         int yPoint = (posY + (height / 2)) + ( (height / vertRes) * (y * -1) ) - (5 - axisThickness);
 
@@ -213,11 +214,15 @@ void Graphing::graphPoint() {
             lastPointY = yPoint;
         }
 
-        //cout << "X: " << x << endl;
-        //cout << "Y: " << y << endl;
+        cout << "X: " << xPoint << endl;
+        cout << "Y: " << yPoint << endl;
 
-        winDisplay->displaySegment(xPoint, yPoint, 5, 5, functColor);
-        winDisplay->drawLine(lastPointX, lastPointY, xPoint, yPoint, functColor);
+        int drawCode = winDisplay->displaySegment(xPoint, yPoint, 5, 5, functColor);
+        if(drawCode != 0){
+            cout << "Error drawing point at: " << x << "," << y << endl;
+            return drawCode;
+        }
+        winDisplay->drawLine(lastPointX + 2, lastPointY + 2, xPoint + 2, yPoint + 2, functColor);
 
         lastPointX = xPoint;
         lastPointY = yPoint;
@@ -226,5 +231,8 @@ void Graphing::graphPoint() {
 
 
     }
+    cout << "stopping point" << endl;
     cin >> xPoint;
+
+    return 0;
 }

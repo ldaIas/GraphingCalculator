@@ -22,7 +22,7 @@ public:
     void getFunction();
 
     //Graph a point
-    void graphPoint();
+    int graphPoint();
 
 private:
 
@@ -59,7 +59,7 @@ private:
      * Ie a value of 1 graphs a point at each segment, while .5 graphs a point
      * halfway between each segment
      */
-    float functRes = 1;
+    double functRes = 1;
     int functColor [3] = {50, 25, 255};
 
 };

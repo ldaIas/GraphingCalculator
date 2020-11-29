@@ -5,6 +5,7 @@
 #ifndef MAZESOLVER_WIND_H
 #define MAZESOLVER_WIND_H
 #include <SDL2/SDL.h>
+#include <string>
 
 class WinD {
 public:
@@ -28,6 +29,9 @@ public:
 
     //Draw a line between two points
     void drawLine(int x1, int y1, int x2, int y2, int colors[]);
+
+    // Set the icon
+    int setIcon();
 
     int getHeight() {return height;}
     int getWidth() {return width;}

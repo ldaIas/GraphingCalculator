@@ -4,14 +4,13 @@
 #include <SDL2/SDL.h>
 #include "WinD.h"
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 
 WinD::WinD() {
 
 }
-
-
 
 /**
  * Initialize the SDL graphics engine
@@ -27,7 +26,17 @@ int WinD::initialize() {
 
     //Create the window
     int dispCode = display();
+    setIcon();
     return dispCode;
+}
+
+int WinD::setIcon() {
+
+    string iconPath = "C:\\Users\\Admin\\CLionProjects\\GraphingCalculator\\icon.bmp";
+    SDL_Surface* icon = SDL_LoadBMP(iconPath.c_str());
+    SDL_SetWindowIcon(win, icon);
+    SDL_FreeSurface(icon);
+    return 0;
 }
 
 int WinD::display() {
@@ -106,6 +115,8 @@ int WinD::displaySegment(int posX, int posY, int width, int height, int color[])
 
     SDL_RenderPresent(ren);
 
+    cout << "drew" << endl;
+    delete rect;
     //TODO Delete later
     //SDL_Delay(50);
     //windowClose();
@@ -119,7 +130,6 @@ void WinD::drawLine(int x1, int y1, int x2, int y2, int colors[]){
     SDL_SetRenderDrawColor(ren, colors[0], colors[1], colors[2], 255);
     SDL_RenderDrawLine(ren, x1, y1, x2, y2);
     SDL_RenderPresent(ren);
-    return;
 }
 
 
